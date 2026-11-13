@@ -333,7 +333,7 @@ export function Hero3DEmblem() {
         uTime: { value: 0 },
         uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
         uBaseSize: { value: 1 },
-        uColorHighlight: { value: new THREE.Color("#f1eee3ff") },
+        uColorHighlight: { value: new THREE.Color("#f1eee3") },
         uColorGold: { value: new THREE.Color("#DFB360") },
         uColorShadow: { value: new THREE.Color("#8C5A14") },
       },
@@ -473,13 +473,14 @@ export function Hero3DEmblem() {
 
     // 7. 60 FPS Physics Simulation & Render Loop
     let animationFrameId: number;
-    const clock = new THREE.Clock();
+    // const clock = new THREE.Clock();
+    const clock = new THREE.Timer();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
       if (!isVisible) return;
 
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = clock.getElapsed();
       shaderMaterial.uniforms.uTime.value = elapsedTime;
 
       // Smooth damped parallax tilt

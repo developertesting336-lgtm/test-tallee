@@ -85,6 +85,8 @@ const bothPlans: PlanRow[] = [
   { feature: "Save favorites manually", free: true, premium: true },
   { feature: "Basic history (10–20 Places)", free: true, premium: true },
   { feature: "Session-based memory", free: true, premium: true },
+  { feature: "Voice search", free: true, premium: true }
+
 ];
 
 const premiumOnly: PlanRow[] = [
@@ -96,7 +98,6 @@ const premiumOnly: PlanRow[] = [
   { feature: "Multi-profile support", free: false, premium: true },
   { feature: "Sharing favorites and lists", free: false, premium: true },
   { feature: "Invite friends to shared lists", free: false, premium: true },
-  { feature: "Voice search", free: false, premium: true },
   { feature: "Talk Back", free: false, premium: true }
 ];
 
@@ -264,8 +265,11 @@ export default function HowItWorksPage() {
         />
 
         {/* DEMO VIDEO */}
-        {/* DEMO VIDEO */}
-        <section className="relative isolate overflow-clip bg-charcoal" aria-labelledby="demo">
+        <section
+          className="relative isolate overflow-clip bg-charcoal"
+          style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}
+          aria-labelledby="demo"
+        >
           <div className="section-y mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16">
             <FadeUp x={-40} y={0}>
               <h2 id="demo" className="font-display text-4xl font-bold text-gold sm:text-5xl">
@@ -297,7 +301,11 @@ export default function HowItWorksPage() {
         </section>
 
         {/* MORE IN THE APP */}
-        <section className="overflow-x-clip bg-ink" aria-labelledby="more">
+        <section
+          className="overflow-x-clip bg-ink"
+          style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}
+          aria-labelledby="more"
+        >
           <div className="section-y mx-auto max-w-6xl px-5 sm:px-6">
             <FadeUp y={24}>
               <h2 id="more" className="text-center font-display text-4xl font-bold text-gold sm:text-5xl">
@@ -331,7 +339,12 @@ export default function HowItWorksPage() {
         </section>
 
         {/* FREE VS PREMIUM */}
-        <section id="premium" className="bg-charcoal" aria-labelledby="plans">
+        <section
+          id="premium"
+          className="bg-charcoal"
+          style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}
+          aria-labelledby="plans"
+        >
           <div className="section-y mx-auto max-w-6xl px-5 sm:px-6">
             <FadeUp y={24} className="mx-auto max-w-2xl text-center">
               <p className="font-display text-xl font-bold uppercase tracking-widest text-gold">Free and Premium</p>
@@ -385,7 +398,11 @@ export default function HowItWorksPage() {
         </section>
 
         {/* EXPLORE */}
-        <section className="bg-charcoal" aria-labelledby="explore">
+        <section
+          className="bg-charcoal"
+          style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}
+          aria-labelledby="explore"
+        >
           <div className="section-y mx-auto max-w-6xl px-5 sm:px-6">
             <FadeUp y={24}>
               <h2 id="explore" className="text-center font-display text-4xl font-bold text-gold sm:text-5xl">

@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
+import { EmblemProvider } from "@/components/EmblemPortal";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -73,24 +74,72 @@ const orgJsonLd = {
   ],
 };
 
+// export default function RootLayout({ children }: LayoutProps<"/">) {
+//   return (
+//     <html lang="en" className="h-full antialiased">
+//       <body className="flex min-h-full flex-col">
+//         <a
+//           href="#main"
+//           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-gold focus:px-4 focus:py-2 focus:text-ink"
+//         >
+//           Skip to Main Content
+//         </a>
+//         <JsonLd data={orgJsonLd} />
+//         <div aria-hidden="true" className="scroll-progress fixed inset-x-0 top-0 z-[60] h-0.5 bg-gold" />
+//         <Header />
+//         <main id="main" className="flex-1">
+//          {children}
+//         </main>
+//         <Footer />
+//         <Analytics />
+//       </body>
+//     </html>
+//   );
+// }
+
+// export default function RootLayout({ children }: LayoutProps<"/">) {
+//   return (
+//     <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
+//       <body className="flex min-h-full flex-col">
+//         <a
+//           href="#main"
+//           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-gold focus:px-4 focus:py-2 focus:text-ink"
+//         >
+//           Skip to Main Content
+//         </a>
+//         <JsonLd data={orgJsonLd} />
+//         <div aria-hidden="true" className="scroll-progress fixed inset-x-0 top-0 z-[60] h-0.5 bg-gold" />
+//         <Header />
+//         <main id="main" className="flex-1">
+//           {children}
+//         </main>
+//         <Footer />
+//         <Analytics />
+//       </body>
+//     </html>
+//   );
+// }
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-gold focus:px-4 focus:py-2 focus:text-ink"
-        >
-          Skip to Main Content
-        </a>
-        <JsonLd data={orgJsonLd} />
-        <div aria-hidden="true" className="scroll-progress fixed inset-x-0 top-0 z-[60] h-0.5 bg-gold" />
-        <Header />
-        <main id="main" className="flex-1">
-         {children}
-        </main>
-        <Footer />
-        <Analytics />
+        <EmblemProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-gold focus:px-4 focus:py-2 focus:text-ink"
+          >
+            Skip to Main Content
+          </a>
+          <JsonLd data={orgJsonLd} />
+          <div aria-hidden="true" className="scroll-progress fixed inset-x-0 top-0 z-[60] h-0.5 bg-gold" />
+          <Header />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <Analytics />
+        </EmblemProvider>
       </body>
     </html>
   );
