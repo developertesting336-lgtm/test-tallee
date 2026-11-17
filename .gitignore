@@ -43,6 +43,6 @@ next-env.d.ts
 .vercel
 
 # keep the documented example
-!.env.example
+.env.example
 
 .vercel
